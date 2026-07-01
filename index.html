@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mod Skin Liên Quân - Tải Skin Mod Miễn Phí</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">&#9733;</span>
+                <h1>Mod Skin <span class="highlight">Liên Quân</span></h1>
+            </div>
+            <p class="subtitle">Kho tàng skin mod độc đáo cho mọi tướng</p>
+        </div>
+        <div class="search-container" id="searchContainer">
+            <input type="text" id="searchInput" placeholder="Tìm kiếm...">
+            <span class="search-icon">&#128269;</span>
+        </div>
+        <div style="text-align:center;margin-top:16px;position:relative;z-index:1">
+            <button class="guide-btn" onclick="openGuide()">&#9654; Hướng dẫn cài mod</button>
+        </div>
+    </div>
+</header>
+
+<main class="container">
+    <div class="tabs">
+        <button class="tab-btn active" data-tab="modle">Mod Lẻ</button>
+        <button class="tab-btn" data-tab="modpack">Mod Pack</button>
+        <button class="tab-btn" data-tab="in1">Mod Skin In1</button>
+        <button class="tab-btn" data-tab="camxa">Cam Xa &amp; FPS</button>
+    </div>
+
+    <div id="tab-modle" class="tab-content active">
+        <div class="filter-tags" id="filterTags">
+            <button class="filter-btn active" onclick="filterByRole('all')">Tất Cả</button>
+            <button class="filter-btn" onclick="filterByRole('Xạ Thủ')">Xạ Thủ</button>
+            <button class="filter-btn" onclick="filterByRole('Pháp Sư')">Pháp Sư</button>
+            <button class="filter-btn" onclick="filterByRole('Đấu Sĩ')">Đấu Sĩ</button>
+            <button class="filter-btn" onclick="filterByRole('Sát Thủ')">Sát Thủ</button>
+            <button class="filter-btn" onclick="filterByRole('Đỡ Đòn')">Đỡ Đòn</button>
+            <button class="filter-btn" onclick="filterByRole('Hỗ Trợ')">Hỗ Trợ</button>
+        </div>
+        <div class="section-count" id="count-modle"></div>
+        <div class="hero-grid" id="grid-modle"></div>
+    </div>
+
+    <div id="tab-modpack" class="tab-content">
+        <div class="section-count" id="count-modpack"></div>
+        <div class="pack-grid" id="grid-modpack"></div>
+    </div>
+
+    <div id="tab-in1" class="tab-content">
+        <div class="filter-tags">
+            <button class="filter-btn active" onclick="filterIn1Role('all')">Tất Cả</button>
+            <button class="filter-btn" onclick="filterIn1Role('Xạ Thủ')">Xạ Thủ</button>
+            <button class="filter-btn" onclick="filterIn1Role('Pháp Sư')">Pháp Sư</button>
+            <button class="filter-btn" onclick="filterIn1Role('Đấu Sĩ')">Đấu Sĩ</button>
+            <button class="filter-btn" onclick="filterIn1Role('Sát Thủ')">Sát Thủ</button>
+            <button class="filter-btn" onclick="filterIn1Role('Đỡ Đòn')">Đỡ Đòn</button>
+            <button class="filter-btn" onclick="filterIn1Role('Hỗ Trợ')">Hỗ Trợ</button>
+        </div>
+        <div class="section-count" id="count-in1"></div>
+        <div class="hero-grid" id="grid-in1"></div>
+    </div>
+
+    <div id="tab-camxa" class="tab-content">
+        <div class="section-count" id="count-camxa"></div>
+        <div class="camxa-grid" id="grid-camxa"></div>
+    </div>
+</main>
+
+<div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="skinModal">
+        <button class="modal-close" onclick="closeModal()">&times;</button>
+        <div id="modalContent"></div>
+    </div>
+</div>
+
+<div class="modal-overlay" id="guideOverlay">
+    <div class="modal" id="guideModal">
+        <button class="modal-close" onclick="closeGuide()">&times;</button>
+        <div id="guideContent"></div>
+    </div>
+</div>
+
+<section class="donate container">
+    <h2 class="donate-title">&#9829; Ủng hộ tác giả</h2>
+    <p class="donate-sub">Nếu bạn thấy các mod hữu ích, hãy ủng hộ mình một ly cafe nhé!</p>
+    <div class="donate-card">
+        <img src="qr.png" alt="QR Ngân hàng" class="donate-qr">
+        <div class="donate-info">
+            <div class="donate-row"><span class="donate-label">Ngân hàng:</span><span class="donate-value">MB Bank</span></div>
+            <div class="donate-row"><span class="donate-label">STK:</span><span class="donate-value">0932939084</span></div>
+            <div class="donate-row"><span class="donate-label">Chủ TK:</span><span class="donate-value">LE HOANG SANG</span></div>
+        </div>
+    </div>
+    <p class="donate-thanks">Cảm ơn bạn đã ủng hộ! &#9829;</p>
+</section>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2026 Kiana Mod AOV | Tổng hợp link tải mod skin liên quân</p>
+        <p class="disclaimer">Trang web không liên kết với Garena hay Tencent. Mod skin chỉ dùng cho mục đích cá nhân.</p>
+    </div>
+</footer>
+
+<audio id="bgMusic" src="nhac.mp3" loop preload="metadata"></audio>
+<button class="music-btn" id="musicBtn" onclick="toggleMusic()">&#9835;</button>
+
+<script src="script.js"></script>
+</body>
+</html>
